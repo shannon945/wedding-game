@@ -258,7 +258,7 @@ const DBox = ({ lines, onComplete }) => {
 const Transition = ({ text, onDone }) => {
   useEffect(() => { const t = setTimeout(onDone, 1800); return () => clearTimeout(t); }, []);
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/90" style={{animation:"fi 0.3s ease-out"}}>
+    <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/95 animate-fi">
       <div className="text-center"><p className="text-amber-300 text-lg font-bold tracking-widest" style={{fontFamily:"'Noto Serif TC',serif"}}>{text}</p><div className="w-16 h-0.5 bg-amber-400/50 mx-auto mt-3 animate-pulse"/></div>
     </div>
   );
@@ -577,7 +577,7 @@ export default function App() {
     <div className="min-h-screen w-full overflow-x-hidden overflow-y-auto relative" style={{background:"radial-gradient(ellipse at 50% 0%,#0c1445 0%,#070b1e 35%,#030408 100%)",backgroundColor:"#030408",fontFamily:"'Noto Sans TC',sans-serif"}}>
       <Starfield/>
       <style>{`
-        html, body, #root { background: #030408; min-height: 100%; }
+        html, body, #root { background: #030408; margin: 0; padding: 0; min-height: 100%; }
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;700&family=Noto+Serif+TC:wght@700;900&display=swap');
         @keyframes fp{0%,100%{transform:translateY(0) translateX(0);opacity:.1}25%{transform:translateY(-20px) translateX(10px);opacity:.4}50%{transform:translateY(-40px) translateX(-5px);opacity:.2}75%{transform:translateY(-20px) translateX(15px);opacity:.5}}
         @keyframes fi{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
@@ -601,7 +601,7 @@ export default function App() {
           <span>{adv.name}</span>
         </div>
       )}
-      {trans && <Transition text={trans} onDone={()=>{}}/>}
       {!isTransition && <S adv={adv}/>}
+      {trans && <Transition text={trans} onDone={()=>{}}/>}
     </div>);
 }
