@@ -29,7 +29,7 @@ const IMG_GROOM_SHY = "data:image/webp;base64,UklGRtIVAABXRUJQVlA4WAoAAAAQAAAAhA
 // ==================== 🎯 遊戲設定 ====================
 const CONFIG = {
   SECRET_PASSWORD: "20260411",
-  LINE_ID: "你的LINE_ID",
+  LINE_ID: "shannon0413",
   WEDDING_DATE: "2026 年 4 月 18 日",
   WEDDING_LOCATION: "婚禮會場",
   BRIDE: "瑄芠", GROOM: "庭瑋",
@@ -390,7 +390,7 @@ const Stage1 = ({ adv }) => {
               <img src={IMG_LOL_FRAME_DEMO} alt="拍拍印示範" className="w-full object-cover"/>
             </div>
             <p className="text-center text-amber-300/70 text-xs mb-3">✨ 推薦使用現場的<span className="text-amber-300 font-bold">「拍拍印」</span>功能拍照，可以加上英雄聯盟相框和 AI 去背效果！</p>
-            {!up?<><input ref={fr} type="file" accept="image/*" capture="environment" onChange={handlePhoto} className="hidden"/><Btn onClick={()=>fr.current?.click()} team={adv.team}>📷 開啟相機拍照 / 上傳拍拍印照片</Btn></>:(
+            {!up?<><input ref={fr} type="file" accept="image/*" onChange={handlePhoto} className="hidden"/><Btn onClick={()=>fr.current?.click()} team={adv.team}>📸 上傳拍拍印照片</Btn></>:(
               <div className="text-center space-y-3 animate-fi">
                 {preview && <img src={preview} alt="合照" className="w-full h-40 object-cover rounded-lg border border-white/10"/>}
                 <div className="flex items-center justify-center gap-2"><span className="text-2xl">✅</span><p className="text-green-400 text-sm font-bold">小隊集結完成！</p></div>
