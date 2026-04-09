@@ -51,7 +51,7 @@ const CONFIG = {
     ],
     teamAssign: [
       { speaker: "bird", text: "接下來要幫你分配陣營！就像 LoL 一樣，有藍方和紅方～", mood: "think" },
-      { speaker: "bird", text: "抽到之後記得去找工作人員領取你的陣營手環喔！", mood: "happy" },
+      { speaker: "bird", text: "抽到之後記得自己拿取對應顏色的陣營手環喔！", mood: "happy" },
     ],
     stage1: [
       { speaker: "narrator", text: "—— 第一章：召喚師峽谷的相遇 ——" },
@@ -347,11 +347,11 @@ const Prologue = ({ adv }) => {
           <div className="flex justify-center gap-8"><div className="text-blue-400 text-xs animate-pulse">🔵 藍方</div><div className="text-red-400 text-xs animate-pulse" style={{animationDelay:"0.3s"}}>🔴 紅方</div></div>
         </div>}
         {ph==="result"&&adv.team&&<div className="text-center space-y-4 animate-fi">
-          {/* 大面積陣營顯示 — 方便工作人員看到發手環 */}
+          {/* 大面積陣營顯示 — 提示賓客自取手環 */}
           <div className={`py-6 px-4 rounded-2xl border-2 ${adv.team==="blue"?"border-blue-400/60 bg-blue-500/10 shadow-xl shadow-blue-500/30":"border-red-400/60 bg-red-500/10 shadow-xl shadow-red-500/30"}`}>
             <div className={`text-6xl mb-3 ${adv.team==="blue"?"drop-shadow-[0_0_20px_rgba(59,130,246,0.9)]":"drop-shadow-[0_0_20px_rgba(239,68,68,0.9)]"}`}>{adv.team==="blue"?"🔵":"🔴"}</div>
             <p className={`text-2xl font-bold mb-1 ${adv.team==="blue"?"text-blue-400":"text-red-400"}`}>{adv.team==="blue"?"藍方陣營":"紅方陣營"}</p>
-            <p className="text-white/50 text-xs">請向工作人員領取{adv.team==="blue"?"藍色":"紅色"}手環</p>
+            <p className="text-white/50 text-xs">請自行拿取{adv.team==="blue"?"藍色":"紅色"}手環</p>
           </div>
           <img src={IMG_BIRD_LOVE} alt="阿啾" className="w-20 h-20 object-contain mx-auto"/>
           <Btn onClick={()=>adv.set({stage:"s1trans",dd:false})} team={adv.team}>⚔️ 開始冒險</Btn>
